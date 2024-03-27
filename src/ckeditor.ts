@@ -75,7 +75,6 @@ class Editor extends ClassicEditor {
         Table,
         TableToolbar,
         TextTransformation,
-        Title,
         Undo,
         WordCount,
     ]

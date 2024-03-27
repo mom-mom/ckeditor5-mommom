@@ -11,7 +11,7 @@ import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import type { EditorConfig } from '@ckeditor/ckeditor5-core';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { FontBackgroundColor, FontColor } from '@ckeditor/ckeditor5-font';
-import { Heading, Title } from '@ckeditor/ckeditor5-heading';
+import { Heading } from '@ckeditor/ckeditor5-heading';
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line';
 import { AutoImage, Image, ImageCaption, ImageInsert, ImageResize, ImageStyle, ImageToolbar, ImageUpload } from '@ckeditor/ckeditor5-image';
 import { Indent } from '@ckeditor/ckeditor5-indent';
@@ -27,7 +27,7 @@ import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { Undo } from '@ckeditor/ckeditor5-undo';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
 declare class Editor extends ClassicEditor {
-    static builtinPlugins: (typeof Alignment | typeof TextTransformation | typeof Autoformat | typeof Autosave | typeof Bold | typeof Italic | typeof BlockQuote | typeof SelectAll | typeof Undo | typeof Essentials | typeof FontBackgroundColor | typeof FontColor | typeof Paragraph | typeof Heading | typeof Title | typeof HorizontalLine | typeof AutoImage | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Link | typeof LinkImage | typeof List | typeof MediaEmbed | typeof PasteFromOffice | typeof RemoveFormat | typeof Table | typeof TableToolbar | typeof WordCount)[];
+    static builtinPlugins: (typeof Alignment | typeof TextTransformation | typeof Autoformat | typeof Autosave | typeof Bold | typeof Italic | typeof BlockQuote | typeof SelectAll | typeof Undo | typeof Essentials | typeof FontBackgroundColor | typeof FontColor | typeof Paragraph | typeof Heading | typeof HorizontalLine | typeof AutoImage | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Link | typeof LinkImage | typeof List | typeof MediaEmbed | typeof PasteFromOffice | typeof RemoveFormat | typeof Table | typeof TableToolbar | typeof WordCount)[];
     static defaultConfig: EditorConfig;
 }
 export default Editor;
