@@ -2,7 +2,7 @@
   "name": "ckeditor5-mommom",
   "author": "Wonderweeks Company",
   "description": "Mommom editor from CKEditor5",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": true,
   "main": "./build/ckeditor.js",
@@ -31,7 +31,8 @@
     "@ckeditor/ckeditor5-typing": "41.2.1",
     "@ckeditor/ckeditor5-undo": "41.2.1",
     "@ckeditor/ckeditor5-upload": "41.2.1",
-    "@ckeditor/ckeditor5-word-count": "41.2.1"
+    "@ckeditor/ckeditor5-word-count": "41.2.1",
+    "axios": "^1.6.8"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-core": "41.2.1",
@@ -41,6 +42,7 @@
     "css-loader": "^5.2.7",
     "postcss": "^8.4.36",
     "postcss-loader": "^4.3.0",
+    "prettier": "^3.2.5",
     "raw-loader": "^4.0.2",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^4.2.3",
