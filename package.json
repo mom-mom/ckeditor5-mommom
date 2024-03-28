@@ -39,6 +39,7 @@
     "@ckeditor/ckeditor5-core": "41.2.1",
     "@ckeditor/ckeditor5-dev-translations": "^32.1.2",
     "@ckeditor/ckeditor5-dev-utils": "^32.1.2",
+    "@ckeditor/ckeditor5-inspector": "^4.1.0",
     "@ckeditor/ckeditor5-theme-lark": "41.2.1",
     "css-loader": "^5.2.7",
     "postcss": "^8.4.36",
