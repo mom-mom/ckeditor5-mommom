@@ -26,8 +26,9 @@ import { Table, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { Undo } from '@ckeditor/ckeditor5-undo';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
+import { SourceEditing } from '@ckeditor/ckeditor5-source-editing';
 declare class Editor extends ClassicEditor {
-    static builtinPlugins: (typeof Alignment | typeof TextTransformation | typeof Autoformat | typeof Autosave | typeof Bold | typeof Italic | typeof BlockQuote | typeof SelectAll | typeof Undo | typeof Essentials | typeof FontBackgroundColor | typeof FontColor | typeof Paragraph | typeof Heading | typeof HorizontalLine | typeof AutoImage | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Link | typeof LinkImage | typeof List | typeof MediaEmbed | typeof PasteFromOffice | typeof RemoveFormat | typeof Table | typeof TableToolbar | typeof WordCount)[];
+    static builtinPlugins: (typeof Alignment | typeof TextTransformation | typeof Autoformat | typeof Autosave | typeof Bold | typeof Italic | typeof BlockQuote | typeof SelectAll | typeof Undo | typeof Essentials | typeof FontBackgroundColor | typeof FontColor | typeof Paragraph | typeof Heading | typeof HorizontalLine | typeof AutoImage | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Link | typeof LinkImage | typeof List | typeof MediaEmbed | typeof PasteFromOffice | typeof RemoveFormat | typeof Table | typeof TableToolbar | typeof WordCount | typeof SourceEditing)[];
     static defaultConfig: EditorConfig;
 }
 export default Editor;

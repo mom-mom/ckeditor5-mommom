@@ -13,7 +13,7 @@ import { BlockQuote } from '@ckeditor/ckeditor5-block-quote'
 import type { EditorConfig } from '@ckeditor/ckeditor5-core'
 import { Essentials } from '@ckeditor/ckeditor5-essentials'
 import { FontBackgroundColor, FontColor } from '@ckeditor/ckeditor5-font'
-import { Heading, Title } from '@ckeditor/ckeditor5-heading'
+import { Heading } from '@ckeditor/ckeditor5-heading'
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line'
 import {
     AutoImage,
@@ -38,6 +38,7 @@ import { TextTransformation } from '@ckeditor/ckeditor5-typing'
 import { Undo } from '@ckeditor/ckeditor5-undo'
 import { WordCount } from '@ckeditor/ckeditor5-word-count'
 import { MommomFileUploadAdapterPlugin } from './FileUploadAdapter'
+import { SourceEditing } from '@ckeditor/ckeditor5-source-editing'
 
 // You can read more about extending the build with additional plugins in the "Installing plugins" guide.
 // See https://ckeditor.com/docs/ckeditor5/latest/installation/plugins/installing-plugins.html for details.
@@ -77,6 +78,7 @@ class Editor extends ClassicEditor {
         TextTransformation,
         Undo,
         WordCount,
+        SourceEditing,
     ]
 
     public static override defaultConfig: EditorConfig = {
@@ -107,6 +109,7 @@ class Editor extends ClassicEditor {
                 'italic',
                 'removeFormat',
                 'horizontalLine',
+                'sourceEditing',
             ],
             shouldNotGroupWhenFull: true,
         },
@@ -125,6 +128,12 @@ class Editor extends ClassicEditor {
             contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
         },
         extraPlugins: [MommomFileUploadAdapterPlugin],
+        fontColor: {
+            colors: ['red'],
+        },
+        fontBackgroundColor: {
+            colors: ['red'],
+        },
     }
 }
 
