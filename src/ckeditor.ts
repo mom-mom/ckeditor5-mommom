@@ -39,6 +39,11 @@ import { Undo } from '@ckeditor/ckeditor5-undo'
 import { WordCount } from '@ckeditor/ckeditor5-word-count'
 import { MommomFileUploadAdapterPlugin } from './FileUploadAdapter'
 import { SourceEditing } from '@ckeditor/ckeditor5-source-editing'
+import {
+    fontBackgroundColorMap,
+    fontColorMap,
+    NotionColorStylePlugin,
+} from './NotionColorStylePlugin'
 
 // You can read more about extending the build with additional plugins in the "Installing plugins" guide.
 // See https://ckeditor.com/docs/ckeditor5/latest/installation/plugins/installing-plugins.html for details.
@@ -127,14 +132,25 @@ class Editor extends ClassicEditor {
         table: {
             contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
         },
-        extraPlugins: [MommomFileUploadAdapterPlugin],
+        extraPlugins: [MommomFileUploadAdapterPlugin, NotionColorStylePlugin],
         fontColor: {
-            colors: ['red'],
+            colors: Object.entries(fontColorMap).map(([key, value]) => ({
+                label: key,
+                color: value,
+            })),
+            colorPicker: false,
         },
         fontBackgroundColor: {
-            colors: ['red'],
+            colors: Object.entries(fontBackgroundColorMap).map(
+                ([key, value]) => ({
+                    label: key.replace('background_', ''),
+                    color: value,
+                }),
+            ),
+            colorPicker: false,
         },
     }
 }
 
 export default Editor
+export { fontColorMap, fontBackgroundColorMap }
