@@ -123,11 +123,7 @@ class Editor extends ClassicEditor {
             shouldNotGroupWhenFull: true,
         },
         fontSize: {
-            options: [
-                'tiny',
-                'small',
-                'default',
-            ]
+            options: [10, 12, 14, 16, 18]
         },
         language: 'ko',
         image: {
@@ -141,7 +137,19 @@ class Editor extends ClassicEditor {
             ],
         },
         table: {
-            contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableCellProperties', 'tableColumnResize'],
+            contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableCellProperties'],
+        },
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h2', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h3', title: 'Heading 2', class: 'ck-heading_heading2' },
+                { model: 'heading3', view: 'h4', title: 'Heading 3', class: 'ck-heading_heading3' },
+                { model: 'headingSmallParagraph', view:  {
+                        name: 'p',
+                        classes: 'small-p'
+                    }, title: '작은 문단', class: 'ck-heading_paragraph' },
+            ]
         },
         extraPlugins: [MommomFileUploadAdapterPlugin, NotionColorStylePlugin],
         fontColor: {
