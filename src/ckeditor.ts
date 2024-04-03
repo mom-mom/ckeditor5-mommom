@@ -12,7 +12,7 @@ import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles'
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote'
 import type { EditorConfig } from '@ckeditor/ckeditor5-core'
 import { Essentials } from '@ckeditor/ckeditor5-essentials'
-import { FontBackgroundColor, FontColor } from '@ckeditor/ckeditor5-font'
+import { FontBackgroundColor, FontColor, FontSize } from '@ckeditor/ckeditor5-font'
 import { Heading } from '@ckeditor/ckeditor5-heading'
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line'
 import {
@@ -33,7 +33,7 @@ import { Paragraph } from '@ckeditor/ckeditor5-paragraph'
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office'
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format'
 import { SelectAll } from '@ckeditor/ckeditor5-select-all'
-import { Table, TableToolbar } from '@ckeditor/ckeditor5-table'
+import { Table, TableCellProperties, TableColumnResize, TableToolbar } from '@ckeditor/ckeditor5-table'
 import { TextTransformation } from '@ckeditor/ckeditor5-typing'
 import { Undo } from '@ckeditor/ckeditor5-undo'
 import { WordCount } from '@ckeditor/ckeditor5-word-count'
@@ -58,6 +58,7 @@ class Editor extends ClassicEditor {
         Bold,
         Essentials,
         FontBackgroundColor,
+        FontSize,
         FontColor,
         Heading,
         HorizontalLine,
@@ -80,6 +81,8 @@ class Editor extends ClassicEditor {
         SelectAll,
         Table,
         TableToolbar,
+        TableColumnResize,
+        TableCellProperties,
         TextTransformation,
         Undo,
         WordCount,
@@ -91,6 +94,7 @@ class Editor extends ClassicEditor {
             items: [
                 'selectAll',
                 'heading',
+                'fontSize',
                 '|',
                 'link',
                 'bulletedList',
@@ -118,6 +122,13 @@ class Editor extends ClassicEditor {
             ],
             shouldNotGroupWhenFull: true,
         },
+        fontSize: {
+            options: [
+                'tiny',
+                'small',
+                'default',
+            ]
+        },
         language: 'ko',
         image: {
             toolbar: [
@@ -130,7 +141,7 @@ class Editor extends ClassicEditor {
             ],
         },
         table: {
-            contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
+            contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableCellProperties', 'tableColumnResize'],
         },
         extraPlugins: [MommomFileUploadAdapterPlugin, NotionColorStylePlugin],
         fontColor: {
