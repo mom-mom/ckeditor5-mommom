@@ -2,26 +2,26 @@ import { Plugin } from '@ckeditor/ckeditor5-core'
 import { FontBackgroundColor, FontColor } from '@ckeditor/ckeditor5-font'
 
 export const fontColorMap: Record<string, string> = {
-    red: '#e73d21',
-    orange: '#fb824e',
-    yellow: '#e0b433',
-    green: '#1d7b69',
-    blue: '#579ab6',
-    purple: '#9857b6',
-    brown: '#946442',
-    gray: '#999',
+    red: '#ff7b88',
+    orange: '#fc795e',
+    yellow: '#fc795e',
+    green: '#3ab39c',
+    blue:  '#1f8efe',
+    purple: '#9b67dd',
+    brown: '#ff7b88',
+    gray: '#666',
 }
 
 export const fontBackgroundColorMap: Record<string, string> = {
-    gray_background: '#f5f5f5',
-    red_background: '#ffecec',
-    orange_background: '#ffecdb',
-    yellow_background: '#fff7db',
-    green_background: '#eaf6ee',
-    blue_background: '#e7f3f7',
-    purple_background: '#f8f4fe',
-    pink_background: '#feeef1',
-    brown_background: '#ffecdb',
+    red_background: '#f9e8ea',
+    orange_background: '#ffede6',
+    yellow_background: '#ffede6',
+    green_background: '#e2f2ed',
+    blue_background: '#eaf3ff',
+    purple_background: '#f4eaff',
+    pink_background: '#f9e8ea',
+    brown_background: '#ffede6',
+    gray_background: 'transparent',
 }
 
 export class NotionColorStylePlugin extends Plugin {

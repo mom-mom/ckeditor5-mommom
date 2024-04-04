@@ -44,6 +44,7 @@ import {
     fontColorMap,
     NotionColorStylePlugin,
 } from './NotionColorStylePlugin'
+import { fontBackgroundColors, fontColors } from "./ColorPalettes";
 
 // You can read more about extending the build with additional plugins in the "Installing plugins" guide.
 // See https://ckeditor.com/docs/ckeditor5/latest/installation/plugins/installing-plugins.html for details.
@@ -143,29 +144,19 @@ class Editor extends ClassicEditor {
             options: [
                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
                 { model: 'heading1', view: 'h2', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading1WithoutToc', view: { name: 'h2', classes: 'without-toc' }, title: '제목 1(목차X)', class: 'ck-heading_heading1' },
                 { model: 'heading2', view: 'h3', title: 'Heading 2', class: 'ck-heading_heading2' },
-                { model: 'heading3', view: 'h4', title: 'Heading 3', class: 'ck-heading_heading3' },
-                { model: 'headingSmallParagraph', view:  {
-                        name: 'p',
-                        classes: 'small-p'
-                    }, title: '작은 문단', class: 'ck-heading_paragraph' },
+                { model: 'heading2WithoutToc', view: { name: 'h3', classes: 'without-toc' }, title: '제목 2(목차X)', class: 'ck-heading_heading2' },
+                { model: 'headingSmallParagraph', view: { name: 'p', classes: 'small-p' }, title: '작은 문단', class: 'ck-heading_paragraph' },
             ]
         },
         extraPlugins: [MommomFileUploadAdapterPlugin, NotionColorStylePlugin],
         fontColor: {
-            colors: Object.entries(fontColorMap).map(([key, value]) => ({
-                label: key,
-                color: value,
-            })),
+            colors: fontColors,
             colorPicker: false,
         },
         fontBackgroundColor: {
-            colors: Object.entries(fontBackgroundColorMap).map(
-                ([key, value]) => ({
-                    label: key.replace('background_', ''),
-                    color: value,
-                }),
-            ),
+            colors: fontBackgroundColors,
             colorPicker: false,
         },
     }
