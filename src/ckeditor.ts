@@ -144,9 +144,9 @@ class Editor extends ClassicEditor {
             options: [
                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
                 { model: 'heading1', view: 'h2', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading1WithoutToc', view: { name: 'h2', classes: 'without-toc' }, title: '제목 1(목차X)', class: 'ck-heading_heading1' },
+                { model: 'heading1Paragraph', view: { name: 'p', classes: 'h2-style' }, title: '제목 1(문단)', class: 'ck-heading_heading1' },
                 { model: 'heading2', view: 'h3', title: 'Heading 2', class: 'ck-heading_heading2' },
-                { model: 'heading2WithoutToc', view: { name: 'h3', classes: 'without-toc' }, title: '제목 2(목차X)', class: 'ck-heading_heading2' },
+                { model: 'heading2Paragraph', view: { name: 'p', classes: 'h3-style' }, title: '제목 2(문단)', class: 'ck-heading_heading2' },
                 { model: 'headingSmallParagraph', view: { name: 'p', classes: 'small-p' }, title: '작은 문단', class: 'ck-heading_paragraph' },
             ]
         },
