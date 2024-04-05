@@ -12,7 +12,7 @@ import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles'
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote'
 import type { EditorConfig } from '@ckeditor/ckeditor5-core'
 import { Essentials } from '@ckeditor/ckeditor5-essentials'
-import { FontBackgroundColor, FontColor, FontSize } from '@ckeditor/ckeditor5-font'
+import { FontBackgroundColor, FontColor } from '@ckeditor/ckeditor5-font'
 import { Heading } from '@ckeditor/ckeditor5-heading'
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line'
 import {
@@ -39,6 +39,7 @@ import { Undo } from '@ckeditor/ckeditor5-undo'
 import { WordCount } from '@ckeditor/ckeditor5-word-count'
 import { MommomFileUploadAdapterPlugin } from './FileUploadAdapter'
 import { SourceEditing } from '@ckeditor/ckeditor5-source-editing'
+import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
 import {
     fontBackgroundColorMap,
     fontColorMap,
@@ -59,7 +60,6 @@ class Editor extends ClassicEditor {
         Bold,
         Essentials,
         FontBackgroundColor,
-        FontSize,
         FontColor,
         Heading,
         HorizontalLine,
@@ -88,6 +88,7 @@ class Editor extends ClassicEditor {
         Undo,
         WordCount,
         SourceEditing,
+        GeneralHtmlSupport
     ]
 
     public static override defaultConfig: EditorConfig = {
@@ -95,7 +96,6 @@ class Editor extends ClassicEditor {
             items: [
                 'selectAll',
                 'heading',
-                'fontSize',
                 '|',
                 'link',
                 'bulletedList',
@@ -123,9 +123,6 @@ class Editor extends ClassicEditor {
             ],
             shouldNotGroupWhenFull: true,
         },
-        fontSize: {
-            options: [10, 12, 14, 16, 18]
-        },
         language: 'ko',
         image: {
             toolbar: [
@@ -142,12 +139,12 @@ class Editor extends ClassicEditor {
         },
         heading: {
             options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h2', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading1Paragraph', view: { name: 'p', classes: 'h2-style' }, title: '제목 1(문단)', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h3', title: 'Heading 2', class: 'ck-heading_heading2' },
-                { model: 'heading2Paragraph', view: { name: 'p', classes: 'h3-style' }, title: '제목 2(문단)', class: 'ck-heading_heading2' },
-                { model: 'headingSmallParagraph', view: { name: 'p', classes: 'small-p' }, title: '작은 문단', class: 'ck-heading_paragraph' },
+                { model: 'paragraph', title: '본문', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h2', title: '제목1', class: 'ck-heading_heading1' },
+                { model: 'heading1Paragraph', view: { name: 'p', classes: 'h2' }, title: '제목 1(문단)', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h3', title: '제목 2', class: 'ck-heading_heading2' },
+                { model: 'heading2Paragraph', view: { name: 'p', classes: 'h3' }, title: '제목 2(문단)', class: 'ck-heading_heading2' },
+                { model: 'headingSmallParagraph', view: { name: 'p', classes: 'small-p' }, title: '캡션', class: 'ck-heading_paragraph' },
             ]
         },
         extraPlugins: [MommomFileUploadAdapterPlugin, NotionColorStylePlugin],
@@ -159,6 +156,13 @@ class Editor extends ClassicEditor {
             colors: fontBackgroundColors,
             colorPicker: false,
         },
+        htmlSupport: {
+            allow: [
+                {
+                    classes: ['h3']
+                }
+            ]
+        }
     }
 }
 
