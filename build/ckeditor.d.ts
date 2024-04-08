@@ -29,9 +29,10 @@ import { WordCount } from '@ckeditor/ckeditor5-word-count';
 import { SourceEditing } from '@ckeditor/ckeditor5-source-editing';
 import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
 import { Style } from '@ckeditor/ckeditor5-style';
+import { ShowBlocks } from '@ckeditor/ckeditor5-show-blocks';
 import { fontBackgroundColorMap, fontColorMap } from './NotionColorStylePlugin';
 declare class Editor extends ClassicEditor {
-    static builtinPlugins: (typeof FontBackgroundColor | typeof FontColor | typeof Alignment | typeof TextTransformation | typeof Autoformat | typeof Autosave | typeof Bold | typeof Italic | typeof BlockQuote | typeof SelectAll | typeof Undo | typeof Essentials | typeof Paragraph | typeof Heading | typeof HorizontalLine | typeof AutoImage | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Link | typeof LinkImage | typeof List | typeof MediaEmbed | typeof PasteFromOffice | typeof RemoveFormat | typeof Table | typeof TableCellProperties | typeof TableColumnResize | typeof TableToolbar | typeof WordCount | typeof SourceEditing | typeof GeneralHtmlSupport | typeof Style)[];
+    static builtinPlugins: (typeof FontBackgroundColor | typeof FontColor | typeof Alignment | typeof TextTransformation | typeof Autoformat | typeof Autosave | typeof Bold | typeof Italic | typeof BlockQuote | typeof SelectAll | typeof Undo | typeof Essentials | typeof Paragraph | typeof Heading | typeof HorizontalLine | typeof AutoImage | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Link | typeof LinkImage | typeof List | typeof MediaEmbed | typeof PasteFromOffice | typeof RemoveFormat | typeof Table | typeof TableCellProperties | typeof TableColumnResize | typeof TableToolbar | typeof WordCount | typeof SourceEditing | typeof GeneralHtmlSupport | typeof Style | typeof ShowBlocks)[];
     static defaultConfig: EditorConfig;
 }
 export default Editor;

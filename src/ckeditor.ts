@@ -41,6 +41,7 @@ import { MommomFileUploadAdapterPlugin } from './FileUploadAdapter'
 import { SourceEditing } from '@ckeditor/ckeditor5-source-editing'
 import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
 import { Style } from '@ckeditor/ckeditor5-style'
+import { ShowBlocks } from '@ckeditor/ckeditor5-show-blocks';
 import {
     fontBackgroundColorMap,
     fontColorMap,
@@ -90,13 +91,15 @@ class Editor extends ClassicEditor {
         WordCount,
         SourceEditing,
         GeneralHtmlSupport,
-        Style
+        Style,
+        ShowBlocks
     ]
 
     public static override defaultConfig: EditorConfig = {
         toolbar: {
             items: [
                 'selectAll',
+                'showBlocks',
                 'heading',
                 'style',
                 '|',
@@ -168,7 +171,10 @@ class Editor extends ClassicEditor {
         htmlSupport: {
             allow: [
                 {
-                    classes: ['h2', 'h3']
+                    name: /.*/,
+                    attributes: true,
+                    classes: true,
+                    styles: true
                 }
             ]
         }
