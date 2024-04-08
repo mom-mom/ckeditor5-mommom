@@ -40,6 +40,7 @@ import { WordCount } from '@ckeditor/ckeditor5-word-count'
 import { MommomFileUploadAdapterPlugin } from './FileUploadAdapter'
 import { SourceEditing } from '@ckeditor/ckeditor5-source-editing'
 import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
+import { Style } from '@ckeditor/ckeditor5-style'
 import {
     fontBackgroundColorMap,
     fontColorMap,
@@ -88,7 +89,8 @@ class Editor extends ClassicEditor {
         Undo,
         WordCount,
         SourceEditing,
-        GeneralHtmlSupport
+        GeneralHtmlSupport,
+        Style
     ]
 
     public static override defaultConfig: EditorConfig = {
@@ -96,12 +98,12 @@ class Editor extends ClassicEditor {
             items: [
                 'selectAll',
                 'heading',
+                'style',
                 '|',
                 'link',
                 'bulletedList',
                 'numberedList',
                 'insertTable',
-                'blockQuote',
                 '|',
                 'outdent',
                 'indent',
@@ -125,12 +127,15 @@ class Editor extends ClassicEditor {
         },
         language: 'ko',
         image: {
+            insert: {
+                type: 'block',
+            },
             toolbar: [
                 'imageTextAlternative',
                 'toggleImageCaption',
-                'imageStyle:inline',
+                'imageStyle:full',
                 'imageStyle:block',
-                'imageStyle:side',
+                'imageStyle:inline',
                 'linkImage',
             ],
         },
@@ -141,10 +146,14 @@ class Editor extends ClassicEditor {
             options: [
                 { model: 'paragraph', title: '본문', class: 'ck-heading_paragraph' },
                 { model: 'heading1', view: 'h2', title: '제목1', class: 'ck-heading_heading1' },
-                { model: 'heading1Paragraph', view: { name: 'p', classes: 'h2' }, title: '제목 1(문단)', class: 'ck-heading_heading1' },
                 { model: 'heading2', view: 'h3', title: '제목 2', class: 'ck-heading_heading2' },
-                { model: 'heading2Paragraph', view: { name: 'p', classes: 'h3' }, title: '제목 2(문단)', class: 'ck-heading_heading2' },
-                { model: 'headingSmallParagraph', view: { name: 'p', classes: 'small-p' }, title: '캡션', class: 'ck-heading_paragraph' },
+            ]
+        },
+        style: {
+            definitions: [
+                { name: '제목 1(본문)', element: 'p', classes: [ 'h2' ] },
+                { name: '제목 2(본문)', element: 'p', classes: [ 'h3' ] },
+                { name: '캡션', element: 'p', classes: [ 'small-p' ] }
             ]
         },
         extraPlugins: [MommomFileUploadAdapterPlugin, NotionColorStylePlugin],
@@ -159,7 +168,7 @@ class Editor extends ClassicEditor {
         htmlSupport: {
             allow: [
                 {
-                    classes: ['h3']
+                    classes: ['h2', 'h3']
                 }
             ]
         }
