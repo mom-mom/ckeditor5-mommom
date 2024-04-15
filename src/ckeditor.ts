@@ -185,7 +185,7 @@ class Editor extends ClassicEditor {
                 {
                     name: 'mommom-media',
                     url: /^(http(s?):\/\/)gcdn\.mom-mom\.net.*/,
-                    html: match => `<video style="width: 100%; max-height: 800px; background-color: #333; object-fit: contain" controls autoplay muted playsinline loop src="${match[0]}"></video>`
+                    html: match => `<video controls autoplay muted playsinline loop src="${match[0]}"></video>`
 
                 },
             ]
