@@ -28,7 +28,7 @@ import {
 import { Indent } from '@ckeditor/ckeditor5-indent'
 import { Link, LinkImage } from '@ckeditor/ckeditor5-link'
 import { List } from '@ckeditor/ckeditor5-list'
-import { MediaEmbed } from '@ckeditor/ckeditor5-media-embed'
+import { MediaEmbed, MediaEmbedEditing } from '@ckeditor/ckeditor5-media-embed'
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph'
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office'
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format'
@@ -78,6 +78,7 @@ class Editor extends ClassicEditor {
         LinkImage,
         List,
         MediaEmbed,
+        MediaEmbedEditing,
         Paragraph,
         PasteFromOffice,
         RemoveFormat,
@@ -176,6 +177,17 @@ class Editor extends ClassicEditor {
                     classes: true,
                     styles: true
                 }
+            ]
+        },
+        mediaEmbed: {
+            previewsInData:true,
+            extraProviders: [
+                {
+                    name: 'mommom-media',
+                    url: /^(http(s?):\/\/)gcdn\.mom-mom\.net.*/,
+                    html: match => `<video style="width: 100%; max-height: 800px; background-color: #333; object-fit: contain" controls autoplay muted playsinline loop src="${match[0]}"></video>`
+
+                },
             ]
         }
     }
