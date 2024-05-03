@@ -2,25 +2,25 @@ import { Plugin } from '@ckeditor/ckeditor5-core'
 import { FontBackgroundColor, FontColor } from '@ckeditor/ckeditor5-font'
 
 export const fontColorMap: Record<string, string> = {
-    red: '#ff7b88',
-    orange: '#fc795e',
-    yellow: '#fc795e',
-    green: '#3ab39c',
-    blue:  '#1f8efe',
-    purple: '#9b67dd',
-    brown: '#ff7b88',
-    gray: '#666',
+    red: '#946442',
+    orange: '#946442',
+    yellow: '#946442',
+    green: '#946442',
+    blue:  '#946442',
+    purple: '#946442',
+    brown: '#946442',
+    gray: '#946442',
 }
 
 export const fontBackgroundColorMap: Record<string, string> = {
-    red_background: '#f9e8ea',
-    orange_background: '#ffede6',
-    yellow_background: '#ffede6',
-    green_background: '#e2f2ed',
-    blue_background: '#eaf3ff',
-    purple_background: '#f4eaff',
-    pink_background: '#f9e8ea',
-    brown_background: '#ffede6',
+    red_background: '#f9f2e7',
+    orange_background: '#f9f2e7',
+    yellow_background: '#f9f2e7',
+    green_background: '#f9f2e7',
+    blue_background: '#f9f2e7',
+    purple_background: '#f9f2e7',
+    pink_background: '#f9f2e7',
+    brown_background: '#f9f2e7',
     gray_background: 'transparent',
 }
 
