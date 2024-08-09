@@ -1,8 +1,4 @@
-export declare const fontColors: {
-    label: string;
-    color: string;
-}[];
-export declare const fontBackgroundColors: {
+export declare const mmColors: {
     label: string;
     color: string;
 }[];
