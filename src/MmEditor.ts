@@ -45,7 +45,7 @@ import { mmColors } from "./ColorPalettes";
 // You can read more about extending the build with additional plugins in the "Installing plugins" guide.
 // See https://ckeditor.com/docs/ckeditor5/latest/installation/plugins/installing-plugins.html for details.
 
-class MommomEditor extends ClassicEditor {
+class MmEditor extends ClassicEditor {
     public static override builtinPlugins = [
         Alignment,
         AutoImage,
@@ -192,4 +192,4 @@ class MommomEditor extends ClassicEditor {
     }
 }
 
-export default MommomEditor
+export default MmEditor
