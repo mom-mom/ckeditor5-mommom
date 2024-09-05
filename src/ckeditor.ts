@@ -1,2 +1,2 @@
-import Editor from './Editor'
-export default Editor
+import MommomEditor from './MommomEditor'
+export default MommomEditor
