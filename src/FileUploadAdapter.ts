@@ -2,10 +2,10 @@ import {
     FileLoader,
     UploadAdapter,
     UploadResponse,
-} from '@ckeditor/ckeditor5-upload'
+    Editor,
+} from 'ckeditor5'
 import { AxiosInstance } from 'axios'
 import axios from 'axios'
-import { Editor } from '@ckeditor/ckeditor5-core'
 
 class MommomFileUploadAdapter implements UploadAdapter {
     private loader: FileLoader

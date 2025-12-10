@@ -1,5 +1,4 @@
-import { Plugin } from '@ckeditor/ckeditor5-core';
-import { FontBackgroundColor, FontColor } from '@ckeditor/ckeditor5-font';
+import { Plugin, FontBackgroundColor, FontColor } from 'ckeditor5';
 export declare const fontColorMap: Record<string, string>;
 export declare const fontBackgroundColorMap: Record<string, string>;
 export declare class NotionColorStylePlugin extends Plugin {

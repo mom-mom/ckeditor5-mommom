@@ -3,18 +3,22 @@
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
-import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic'
-import { Alignment } from '@ckeditor/ckeditor5-alignment'
-import { Autoformat } from '@ckeditor/ckeditor5-autoformat'
-import { Autosave } from '@ckeditor/ckeditor5-autosave'
-import { Bold, Italic, Underline } from '@ckeditor/ckeditor5-basic-styles'
-import { BlockQuote } from '@ckeditor/ckeditor5-block-quote'
-import type { EditorConfig } from '@ckeditor/ckeditor5-core'
-import { Essentials } from '@ckeditor/ckeditor5-essentials'
-import { FontBackgroundColor, FontColor, FontSize } from '@ckeditor/ckeditor5-font'
-import { Heading } from '@ckeditor/ckeditor5-heading'
-import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line'
 import {
+    ClassicEditor,
+    Alignment,
+    Autoformat,
+    Autosave,
+    Bold,
+    Italic,
+    Underline,
+    BlockQuote,
+    type EditorConfig,
+    Essentials,
+    FontBackgroundColor,
+    FontColor,
+    FontSize,
+    Heading,
+    HorizontalLine,
     AutoImage,
     Image,
     ImageCaption,
@@ -23,22 +27,27 @@ import {
     ImageStyle,
     ImageToolbar,
     ImageUpload,
-} from '@ckeditor/ckeditor5-image'
-import { Indent } from '@ckeditor/ckeditor5-indent'
-import { Link, LinkImage } from '@ckeditor/ckeditor5-link'
-import { List } from '@ckeditor/ckeditor5-list'
-import { MediaEmbed, MediaEmbedEditing } from '@ckeditor/ckeditor5-media-embed'
-import { Paragraph } from '@ckeditor/ckeditor5-paragraph'
-import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format'
-import { SelectAll } from '@ckeditor/ckeditor5-select-all'
-import { Table, TableCellProperties, TableColumnResize, TableToolbar } from '@ckeditor/ckeditor5-table'
-import { Undo } from '@ckeditor/ckeditor5-undo'
-import { WordCount } from '@ckeditor/ckeditor5-word-count'
+    Indent,
+    Link,
+    LinkImage,
+    List,
+    MediaEmbed,
+    MediaEmbedEditing,
+    Paragraph,
+    RemoveFormat,
+    SelectAll,
+    Table,
+    TableCellProperties,
+    TableColumnResize,
+    TableToolbar,
+    Undo,
+    WordCount,
+    SourceEditing,
+    GeneralHtmlSupport,
+    Style,
+    ShowBlocks,
+} from 'ckeditor5'
 import { MommomFileUploadAdapterPlugin } from './FileUploadAdapter'
-import { SourceEditing } from '@ckeditor/ckeditor5-source-editing'
-import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
-import { Style } from '@ckeditor/ckeditor5-style'
-import { ShowBlocks } from '@ckeditor/ckeditor5-show-blocks';
 import { NotionColorStylePlugin } from './NotionColorStylePlugin'
 import { mmColors } from "./ColorPalettes";
 

@@ -1,5 +1,4 @@
-import { Plugin } from '@ckeditor/ckeditor5-core'
-import { FontBackgroundColor, FontColor } from '@ckeditor/ckeditor5-font'
+import { Plugin, FontBackgroundColor, FontColor } from 'ckeditor5'
 
 export const fontColorMap: Record<string, string> = {
     red: '#946442',
