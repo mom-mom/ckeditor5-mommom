@@ -84,9 +84,6 @@ module.exports = {
 				loader: 'postcss-loader',
 				options: {
 					postcssOptions: styles.getPostCssConfig( {
-						themeImporter: {
-							themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
-						},
 						minify: true
 					} )
 				}
