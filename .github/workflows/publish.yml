@@ -1,0 +1,39 @@
+name: Publish @mom-mom/ckeditor5-mommom
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: "https://npm.pkg.github.com"
+
+      - name: Configure npmrc
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.MOMMOM_PACKAGES_AUTH_TOKEN }}" > ~/.npmrc
+          echo "@mom-mom:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.MOMMOM_PACKAGES_AUTH_TOKEN }}

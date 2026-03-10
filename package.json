@@ -1,12 +1,22 @@
 {
-  "name": "ckeditor5-mommom",
+  "name": "@mom-mom/ckeditor5-mommom",
   "author": "Wonderweeks Company",
   "description": "Mommom editor from CKEditor5",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "license": "SEE LICENSE IN LICENSE.md",
-  "private": true,
   "main": "./build/ckeditor.js",
   "types": "./build/ckeditor.d.ts",
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mom-mom/ckeditor5-mommom.git"
+  },
   "dependencies": {
     "ckeditor5": "43.0.0",
     "axios": "^1.6.8"
