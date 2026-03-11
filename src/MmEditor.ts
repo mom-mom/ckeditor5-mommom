@@ -99,6 +99,7 @@ class MmEditor extends ClassicEditor {
     ]
 
     public static override defaultConfig: EditorConfig = {
+        licenseKey: 'GPL',
         toolbar: {
             items: [
                 'selectAll',
