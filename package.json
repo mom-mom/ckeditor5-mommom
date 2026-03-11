@@ -4,8 +4,17 @@
   "description": "Mommom editor from CKEditor5",
   "version": "0.1.20",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "./build/ckeditor.js",
+  "main": "./build/ckeditor.umd.js",
+  "module": "./build/ckeditor.mjs",
   "types": "./build/ckeditor.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/ckeditor.d.ts",
+      "import": "./build/ckeditor.mjs",
+      "require": "./build/ckeditor.umd.js"
+    },
+    "./css": "./build/ckeditor.css"
+  },
   "files": [
     "build"
   ],
@@ -24,8 +33,6 @@
     "ckeditor5": ">=43.0.0"
   },
   "devDependencies": {
-    "@ckeditor/ckeditor5-dev-translations": "^43.1.0",
-    "@ckeditor/ckeditor5-dev-utils": "^43.1.0",
     "css-loader": "^5.2.7",
     "esbuild-loader": "^4.4.2",
     "postcss": "^8.4.36",
@@ -36,12 +43,13 @@
     "terser-webpack-plugin": "^4.2.3",
     "ts-loader": "^9.5.1",
     "typescript": "5.0.4",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4",
     "webpack": "^5.90.3",
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
     "prebuild": "node scripts/prebuild.js",
-    "build": "webpack --mode production",
-    "postbuild": "tsc --declaration --declarationDir build --stripInternal --emitDeclarationOnly"
+    "build": "vite build"
   }
 }
