@@ -22,6 +22,14 @@ jobs:
           node-version: 20
           registry-url: "https://npm.pkg.github.com"
 
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Configure npmrc
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.MOMMOM_PACKAGES_AUTH_TOKEN }}" > ~/.npmrc

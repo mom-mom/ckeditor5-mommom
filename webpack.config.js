@@ -69,7 +69,24 @@ module.exports = {
 			test: /\.ts$/,
 			use: 'ts-loader'
 		}, {
+			// Pre-compiled CSS from ckeditor5 dist (no PostCSS processing needed)
 			test: /\.css$/,
+			include: /node_modules\/ckeditor5\/dist/,
+			use: [ {
+				loader: 'style-loader',
+				options: {
+					injectType: 'singletonStyleTag',
+					attributes: {
+						'data-cke': true
+					}
+				}
+			}, {
+				loader: 'css-loader'
+			} ]
+		}, {
+			// CKEditor source CSS (requires PostCSS processing)
+			test: /\.css$/,
+			exclude: /node_modules\/ckeditor5\/dist/,
 			use: [ {
 				loader: 'style-loader',
 				options: {

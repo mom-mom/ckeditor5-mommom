@@ -2,7 +2,7 @@
   "name": "@mom-mom/ckeditor5",
   "author": "Wonderweeks Company",
   "description": "Mommom editor from CKEditor5",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "./build/ckeditor.js",
   "types": "./build/ckeditor.d.ts",
