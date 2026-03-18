@@ -23,9 +23,9 @@ export const fontBackgroundColorMap: Record<string, string> = {
     gray_background: 'transparent',
 }
 
-export class NotionColorStylePlugin extends Plugin {
+export class MommomColorStylePlugin extends Plugin {
     public static get pluginName() {
-        return 'NotionColorStylePlugin' as const
+        return 'MommomColorStylePlugin' as const
     }
 
     public static get requires() {

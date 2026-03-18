@@ -48,7 +48,7 @@ import {
     ShowBlocks,
 } from 'ckeditor5'
 import { MommomFileUploadAdapterPlugin } from './FileUploadAdapter'
-import { NotionColorStylePlugin } from './NotionColorStylePlugin'
+import { MommomColorStylePlugin } from './MommomColorStylePlugin'
 import { mmColors } from "./ColorPalettes";
 
 // You can read more about extending the build with additional plugins in the "Installing plugins" guide.
@@ -96,6 +96,8 @@ class MmEditor extends ClassicEditor {
         Style,
         FontSize,
         ShowBlocks,
+        MommomFileUploadAdapterPlugin,
+        MommomColorStylePlugin,
     ]
 
     public static override defaultConfig: EditorConfig = {
@@ -166,7 +168,6 @@ class MmEditor extends ClassicEditor {
                 { model: 'heading2', view: 'h3', title: '제목 2', class: 'ck-heading_heading2' },
             ]
         },
-        extraPlugins: [MommomFileUploadAdapterPlugin, NotionColorStylePlugin],
         fontSize: {
             options: [10, 12, 14, 'default', 18, 20, 24, 30, 36],
         },

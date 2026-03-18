@@ -2,7 +2,7 @@ import {
     FileLoader,
     UploadAdapter,
     UploadResponse,
-    Editor,
+    Plugin,
 } from 'ckeditor5'
 import { AxiosInstance } from 'axios'
 import axios from 'axios'
@@ -73,8 +73,14 @@ type MediaBucketResponse = {
     url: string
 }
 
-export function MommomFileUploadAdapterPlugin(editor: Editor) {
-    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
-        return new MommomFileUploadAdapter(loader)
+export class MommomFileUploadAdapterPlugin extends Plugin {
+    public static get pluginName() {
+        return 'MommomFileUploadAdapterPlugin' as const
+    }
+
+    public init(): void {
+        this.editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+            return new MommomFileUploadAdapter(loader)
+        }
     }
 }
