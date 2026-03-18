@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <title>MmEditor Dev</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            body {
+                max-width: 900px;
+                margin: 40px auto;
+                padding: 0 20px;
+                font-family: sans-serif;
+            }
+            h1 { font-size: 1.4rem; margin-bottom: 20px; }
+            #output {
+                margin-top: 20px;
+                padding: 16px;
+                background: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                white-space: pre-wrap;
+                font-size: 0.85rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>MmEditor Dev</h1>
+        <div id="editor">
+            <p>여기에 내용을 입력하세요.</p>
+        </div>
+        <h2 style="margin-top: 24px; font-size: 1rem;">HTML 출력</h2>
+        <div id="output"></div>
+
+        <script type="module">
+            import MmEditor from './src/ckeditor.ts'
+
+            MmEditor.create(document.querySelector('#editor'), {
+                simpleUpload: {
+                    uploadUrl: '/api/upload',
+                },
+            }).then((editor) => {
+                window.editor = editor
+                const output = document.querySelector('#output')
+                editor.model.document.on('change:data', () => {
+                    output.textContent = editor.getData()
+                })
+            }).catch((err) => {
+                console.error(err)
+            })
+        </script>
+    </body>
+</html>
