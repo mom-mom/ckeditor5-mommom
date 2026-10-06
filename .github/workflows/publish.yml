@@ -30,12 +30,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-
-      - name: Configure npmrc
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.MOMMOM_PACKAGES_AUTH_TOKEN }}" > ~/.npmrc
-          echo "@mom-mom:registry=https://npm.pkg.github.com/" >> ~/.npmrc
-
       - name: Install dependencies
         run: npm install
 
@@ -45,4 +39,4 @@ jobs:
       - name: Publish to GitHub Packages
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.MOMMOM_PACKAGES_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
