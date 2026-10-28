@@ -6,7 +6,8 @@
 /dist
 /.pnp
 .pnp.js
-.claude
+.claude/*
+!.claude/settings.json
 
 # testing
 /coverage
