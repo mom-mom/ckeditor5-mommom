@@ -47,6 +47,7 @@ import {
     Style,
     ShowBlocks,
 } from 'ckeditor5'
+import koTranslations from 'ckeditor5/translations/ko.js'
 import { MommomFileUploadAdapterPlugin } from './FileUploadAdapter'
 import { MommomColorStylePlugin } from './MommomColorStylePlugin'
 import { mmColors } from "./ColorPalettes";
@@ -137,6 +138,7 @@ class MmEditor extends ClassicEditor {
             shouldNotGroupWhenFull: true,
         },
         language: 'ko',
+        translations: koTranslations,
         image: {
             insert: {
                 type: 'block',

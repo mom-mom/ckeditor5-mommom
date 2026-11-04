@@ -2,7 +2,7 @@
   "name": "@mom-mom/ckeditor5",
   "author": "Wonderweeks Company",
   "description": "Mommom editor from CKEditor5",
-  "version": "0.1.25",
+  "version": "0.2.1",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "./build/ckeditor.umd.js",
   "module": "./build/ckeditor.mjs",
@@ -12,8 +12,7 @@
       "types": "./build/ckeditor.d.ts",
       "import": "./build/ckeditor.mjs",
       "require": "./build/ckeditor.umd.js"
-    },
-    "./css": "./build/ckeditor.css"
+    }
   },
   "files": [
     "build"
@@ -33,6 +32,7 @@
     "ckeditor5": ">=43.0.0"
   },
   "devDependencies": {
+    "ckeditor5": "^49.1.0",
     "css-loader": "^5.2.7",
     "esbuild-loader": "^4.4.2",
     "postcss": "^8.4.36",
